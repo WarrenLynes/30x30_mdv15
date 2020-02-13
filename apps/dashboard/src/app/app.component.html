@@ -1,0 +1,42 @@
+
+
+<mdv15-toolbar title="Dash"
+               [sidenav]="sidenav"
+               [userIsAuthenticated]="authenticated$ | async">
+</mdv15-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" class="app-sidenav">
+    <nav>
+      <a mat-button
+         color="primary"
+         class="nav-link"
+         *ngFor="let link of links"
+         (click)="sidenav.toggle();"
+         [routerLink]="link.path" routerLinkActive="active"
+      >
+        <mat-icon>{{link.icon}}</mat-icon>
+        <span class="link-title">{{link.title}}</span>
+      </a>
+
+      <div class="spacer"></div>
+
+      <button
+        mat-button
+        full-width
+        class="nav-link"
+        color="primary"
+        (click)="onLogout(); sidenav.toggle();"
+      >
+        <mat-icon>exit_to_app</mat-icon>
+        <span class="link-title">logout</span>
+      </button>
+    </nav>
+  </mat-sidenav>
+
+  <mat-progress-bar *ngIf="loading" class="computers-progress" color="accent" mode="indeterminate"></mat-progress-bar>
+
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
