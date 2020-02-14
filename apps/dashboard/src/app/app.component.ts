@@ -15,7 +15,7 @@ export class AppComponent implements OnInit, OnDestroy {
   loading: boolean;
 
   links = [
-    {path: '', title: 'phones', icon: 'access_time'},
+    {path: '', title: 'computers', icon: 'access_time'},
   ];
 
   constructor(

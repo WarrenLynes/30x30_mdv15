@@ -1,0 +1,22 @@
+
+<mat-card *ngFor="let dati of data">
+  <mat-card-title>{{dati.title}}</mat-card-title>
+  <mat-card-content>
+    <div class="container">
+      <div class="col">
+        {{dati.details}}
+      </div>
+      <div class="col">
+        <mat-icon *ngIf="dati.approved" color="primary">thumb_up</mat-icon>
+        <mat-icon *ngIf="!dati.approved" >thumb_down</mat-icon>
+      </div>
+      <div class="col">
+        <mat-progress-bar mode="determinate" [value]="dati.coolLevel"></mat-progress-bar>
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button color="primary" class="full-width" mat-stroked-button (click)="selectComputer.emit(dati.id)"> EDIT </button>
+  </mat-card-actions>
+</mat-card>

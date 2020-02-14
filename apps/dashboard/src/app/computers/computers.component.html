@@ -1,0 +1,20 @@
+
+
+<div class="container d-flex mt-3">
+  <div class="col-6">
+    <mdv15-list
+      [data]="computers$ | async"
+      [selected]="selected$"
+      (selectComputer)="facade.selectComputer($event)"
+    ></mdv15-list>
+  </div>
+
+  <div class="col-6">
+    <mdv15-form
+      [selected]="selected$ | async"
+      (save)="save($event)"
+      (delete)="delete($event)"
+      (cancel)="cancel($event)"
+    ></mdv15-form>
+  </div>
+</div>

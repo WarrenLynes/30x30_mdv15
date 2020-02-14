@@ -1,12 +1,5 @@
-
-
-<mdv15-toolbar title="Dash"
-               [sidenav]="sidenav"
-               [userIsAuthenticated]="authenticated$ | async">
-</mdv15-toolbar>
-
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" class="app-sidenav">
+  <mat-sidenav #sidenav mode="side" closed class="app-sidenav">
     <nav>
       <a mat-button
          color="primary"
@@ -34,7 +27,15 @@
     </nav>
   </mat-sidenav>
 
-  <mat-progress-bar *ngIf="loading" class="computers-progress" color="accent" mode="indeterminate"></mat-progress-bar>
+  <mat-progress-bar *ngIf="loading" class="computers-progress app-progress-bar" color="accent" mode="indeterminate"></mat-progress-bar>
+
+  <mat-toolbar color="primary" class="mat-elevation-z4 app-toolbar" >
+  <span>
+    <button mat-mini-fab color="accent" (click)="sidenav.toggle();">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </span>
+  </mat-toolbar>
 
   <div class="app-content">
     <router-outlet></router-outlet>

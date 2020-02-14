@@ -3,3 +3,4 @@ export { defaultState } from './lib/index';
 export {AppFacade} from './lib/app/app.facade';
 export {AuthFacade} from './lib/auth/auth.facade';
 export {AppState} from './lib/index';
+export {ComputersFacade} from './lib/computers/computers.facade';
