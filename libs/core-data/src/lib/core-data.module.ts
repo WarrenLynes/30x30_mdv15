@@ -8,7 +8,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 @NgModule({
   declarations: [SnackbarComponent],
   imports: [CommonModule, HttpClientModule],
-  providers: [ AuthService, ComputersService, ],
-  entryComponents: [SnackbarComponent]
+  providers: [ AuthService, ComputersService,],
+  entryComponents: [SnackbarComponent],
 })
 export class CoreDataModule {}

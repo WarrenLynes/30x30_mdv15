@@ -12,7 +12,7 @@ export class SnackbarService {
   openSnackBar(message: string) {
     this.snackbarRefs.push(this._snackBar.openFromComponent(SnackbarComponent, {
       data: message,
-      duration: 80000
+      duration: 2000
     }));
   }
 }
